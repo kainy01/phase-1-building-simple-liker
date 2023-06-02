@@ -3,17 +3,17 @@ const EMPTY_HEART = "♡";
 const FULL_HEART = "♥";
 
 // Your JavaScript code goes here!
-const liker = document.querySelector(".like");
+const liker = document.querySelector(".like-glyph");
 liker.addEventListener("click", () => {
-  const full = heart.classList.contains("activated-heart");
+  const full = liker.classList.contains("activated-heart");
   mimicServerCall()
     .then(function (response) {
       if (full) {
-        heart.innerHTML = EMPTY_HEART;
-        heart.classList.remove("activated-heart");
+        liker.innerHTML = EMPTY_HEART;
+        liker.classList.remove("activated-heart");
       } else {
-        heart.innerHTML = FULL_HEART;
-        heart.classList.add("activated-heart");
+        liker.innerHTML = FULL_HEART;
+        liker.classList.add("activated-heart");
       }
     })
     .catch(function (error) {
